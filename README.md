@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#Suteru(ステール)
 
-Things you may want to cover:
+##概要
+* 自分が捨てる・捨てたモノを投稿することができます。
+* 他ユーザーが捨てたもの、なぜ捨てたのか？を見ることができます。
+* モノを減らし、快適なミニマムライフをサポートします。
 
-* Ruby version
+##コンセプト
+* 「モノを捨てる」にフォーカスしています。
+* 使いやすくシンプルなデザインです。
 
-* System dependencies
+##バージョン
+* Ruby 2.4.1
+* Rails Rails 5.1.6.1
 
-* Configuration
+##機能一覧
+- ログイン機能
+  - 非ログイン状態では投稿詳細の閲覧不可
+- ユーザー登録機能
+  - SNSアカウントでの登録も可能
+  - メールでの本人確認での登録
+- パスワード再設定機能
+- 投稿機能
+  - 画像投稿可能
+- 投稿お気に入り機能
+  - 投稿お気に入りの一覧も閲覧可能
+- 投稿編集機能
+  - 投稿者のみ編集可能
 
-* Database creation
+##カタログ設計、テーブル設計、画面遷移図、画面ワイヤーフレーム
+https://docs.google.com/spreadsheets/d/1jgjGMQn-nhN1vjxvak9M6_ynAoxUN7j3A_reob-hnOs/edit?usp=sharing
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##使用予定Gem
+* carrierwave
+* mini_magick
+* devise
