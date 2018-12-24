@@ -17,17 +17,19 @@
 
 ## 機能一覧
 - ログイン機能
-  - 非ログイン状態では投稿詳細の閲覧不可
+  - 非ログイン状態では投稿一覧のみ閲覧可能(新規投稿、投稿詳細閲覧、投稿編集、削除不可)
 - ユーザー登録機能
   - SNSアカウントでの登録も可能
   - メールでの本人確認での登録
 - パスワード再設定機能
 - 投稿機能
   - 画像投稿可能
+  - SNSへのシェア可能
 - 投稿お気に入り機能
   - 投稿お気に入りの一覧も閲覧可能
 - 投稿編集機能
   - 投稿者のみ編集可能
+
 
 ## カタログ設計、テーブル設計、画面遷移図、画面ワイヤーフレーム
 https://docs.google.com/spreadsheets/d/1jgjGMQn-nhN1vjxvak9M6_ynAoxUN7j3A_reob-hnOs/edit?usp=sharing
@@ -36,3 +38,5 @@ https://docs.google.com/spreadsheets/d/1jgjGMQn-nhN1vjxvak9M6_ynAoxUN7j3A_reob-h
 * carrierwave
 * mini_magick
 * devise
+* omniauth
+* omniauth-twitter
