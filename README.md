@@ -39,3 +39,4 @@ https://docs.google.com/spreadsheets/d/1jgjGMQn-nhN1vjxvak9M6_ynAoxUN7j3A_reob-h
 * devise
 * omniauth
 * omniauth-twitter
+* simple_calendar
