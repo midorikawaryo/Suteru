@@ -1,1 +1,11 @@
 <h1>投稿一覧</h1>
+
+<% @posts.each do |post| %>
+
+<p>タイトル<%= post.title %><p>
+<p>コメント<%= post.comment %><p>
+<p><%= link_to '詳細', post_path(post.id) %></p>
+
+<% end %>
+
+<%= link_to '新規投稿', new_post_path %>
