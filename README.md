@@ -30,7 +30,6 @@
 - 投稿編集機能
   - 投稿者のみ編集可能
 
-
 ## カタログ設計、テーブル設計、画面遷移図、画面ワイヤーフレーム
 https://docs.google.com/spreadsheets/d/1jgjGMQn-nhN1vjxvak9M6_ynAoxUN7j3A_reob-hnOs/edit?usp=sharing
 
