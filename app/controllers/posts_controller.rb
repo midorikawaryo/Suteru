@@ -34,6 +34,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
+    redirect_to posts_path, notice:"削除しました！"
   end
 
   private
