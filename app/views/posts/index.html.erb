@@ -3,6 +3,11 @@
 
 <% @posts.each do |post| %>
 
+<p>
+  <strong>Image:</strong>
+  <%= image_tag post.image %>
+</p>
+
 <p>タイトル</p>
 <p><%= post.title %></p>
 
