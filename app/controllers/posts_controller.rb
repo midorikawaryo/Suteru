@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create,:edit,:destroy]
 
-
   def index
     @posts = Post.all
   end
@@ -22,9 +21,8 @@ class PostsController < ApplicationController
 
   def show
     @favorite = current_user.favorites.find_by(post_id: @post.id)
+
   end
-
-
 
   def edit
   end

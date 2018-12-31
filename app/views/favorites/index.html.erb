@@ -1,1 +1,18 @@
 <h1>お気に入り一覧</h1>
+
+<% @favorites_posts.each do |favorites_post| %>
+
+  <p>
+    <strong>Image:</strong>
+    <%= image_tag favorites_post.image %>
+  </p>
+
+  <p>投稿者</p>
+  <p><%= favorites_post.user.name %></p>
+
+  <p>タイトル</p>
+  <p><%= favorites_post.title %></p>
+
+  <p>コメント</p>
+  <p><%= favorites_post.comment %></p>
+<% end %>
