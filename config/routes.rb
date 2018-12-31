@@ -4,8 +4,6 @@ Rails.application.routes.draw do
 
   resources :posts
 
-
-
   resources :top, only: [:index]
 
   devise_for :users , controllers: {
