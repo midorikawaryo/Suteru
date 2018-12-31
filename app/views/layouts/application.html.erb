@@ -19,7 +19,7 @@
       <%= link_to "新規登録", new_user_registration_path %>
       <%= link_to "ログイン", new_user_session_path %>
     <% end %>
-    <%= link_to "プロフィール", user_path(id: current_user.id)%>
+    <%= link_to "プロフィール", user_path(current_user.id) %>
 
     <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>
@@ -27,6 +27,7 @@
     <% if alert %>
       <p class="alert alert-error"><%= alert %></p>
     <% end %>
+
   </header>
 
   <body>
