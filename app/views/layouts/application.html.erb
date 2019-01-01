@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <title>Suteru</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- viewport meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
 
   <header>
-    <h3>HEADER</h3>
-
-    <%= link_to "top", top_index_path %>
-    <% if user_signed_in? %>
-      <%= link_to "投稿一覧", posts_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      <%= link_to "プロフィール", user_path(id: current_user.id)%>
-    <% else %>
-      <%= link_to "新規登録", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
-    <% end %>
-
+    <dev class="header-wapper">
+      <div class="headr-nav">
+        <%= link_to image_tag('/Suteru-logo.png', { :border => '0', :alt => 'TOP'}), top_index_path %>
+        <% if user_signed_in? %>
+          <li><%= link_to "投稿一覧", posts_path %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to "プロフィール", user_path(id: current_user.id)%></li>
+        <% else %>
+          <li><%= link_to "新規登録", new_user_registration_path %></li>
+          <li><%= link_to "ログイン", new_user_session_path %></li>
+        <% end %>
+      </div>
+    </dev>
+  </header>
 
     <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>
@@ -29,16 +33,18 @@
       <p class="alert alert-error"><%= alert %></p>
     <% end %>
 
-  </header>
-
   <body>
     <%= yield %>
   </body>
 
   <footer>
-    <div class="container">
+    <div class="footer-wapper">
       <h3>FOOTER</h3>
     </div>
-  </footer>
 
+    <!-- jQuery、Popper.js、Bootstrap JS -->
+    <script src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </footer>
 </html>
