@@ -1,9 +1,6 @@
 <h1>投稿詳細画面</h1>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @post.image %>
-</p>
+<p><%= image_tag @post.image %></p>
 <p>投稿者：<%= link_to  @post.user.name,user_path(id: @post.user.id) %></p>
 <p>タイトル: <%= @post.title %></p>
 <p>内容: <%= @post.comment %></p>

@@ -1,13 +1,15 @@
 
 <p><%= notice %></p>
 
+<% @posts.each do |post| %>
 <div class="post_container">
-  <% @posts.each do |post| %>
   <div class="post_contents card-img-top bg-dark text-white ">
+      <%= post.user.name %>の投稿
       <%= image_tag post.image %>
       <div class="card-body">
         <h4 class="card-title"><%= post.title %></h4>
         <div class="btn btn-light"><%= link_to '詳細', post_path(post.id) %></div>
       </div>
   </div>
-  <% end %>
+</div>
+<% end %>
