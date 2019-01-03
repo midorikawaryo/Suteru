@@ -5,15 +5,22 @@ html {
   padding: 0;
 }
 
+body {
+  position: relative;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+
 div {
   display: block;
 }
 
-body {
+.main_contents {
   height: 100%;
-  min-height: 100%;
   padding-top: 50px;
-  padding-bottom: 150px
+  padding-bottom: 50px
+
 }
 
 header  {
@@ -34,7 +41,7 @@ header .header-wapper {
   margin: auto;
 }
 
-img {
+.headr-nav img {
   width: 120px;
   height: 60px;
 }
@@ -50,14 +57,15 @@ header .header-wapper a {
 }
 
 footer {
+  background-color: gray;
+  position: absolute;
   bottom: 0;
   width: 100%;
-  height: 100px;
-  background-color: gray;
-  z-index: 100;
+  height: 50px
 }
 
 .footer-wapper{
+  margin-top: auto;
   text-align: center;
   color: white;
 }

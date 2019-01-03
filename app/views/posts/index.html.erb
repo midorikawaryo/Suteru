@@ -1,21 +1,13 @@
-<h1>投稿一覧</h1>
+
 <p><%= notice %></p>
 
-<% @posts.each do |post| %>
-
-<p>
-  <strong>Image:</strong>
-  <%= image_tag post.image %>
-</p>
-
-<p>タイトル</p>
-<p><%= post.title %></p>
-
-<p>コメント</p>
-<p><%= post.comment %></p>
-
-<p><%= link_to '詳細', post_path(post.id) %></p>
-
-<% end %>
-
-<p><%= link_to '新規投稿', new_post_path %></p>
+<div class="post_container">
+  <% @posts.each do |post| %>
+  <div class="post_contents card-img-top bg-dark text-white ">
+      <%= image_tag post.image %>
+      <div class="card-body">
+        <h4 class="card-title"><%= post.title %></h4>
+        <div class="btn btn-light"><%= link_to '詳細', post_path(post.id) %></div>
+      </div>
+  </div>
+  <% end %>
