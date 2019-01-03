@@ -1,4 +1,4 @@
-html{
+html {
   height: 100%;
   font-size:62.5%;
   margin: 0;
@@ -9,15 +9,14 @@ div {
   display: block;
 }
 
-body{
+body {
   height: 100%;
   min-height: 100%;
   padding-top: 50px;
   padding-bottom: 150px
-
 }
 
-header{
+header  {
    top: 0px;
    height: 50px;
    width: 100%;
@@ -25,10 +24,9 @@ header{
    box-shadow: 0 0 2px #666, 0 0 8px #222;
    opacity: 0.9;
    position: fixed;
-
  }
 
-header .header-wapper{
+header .header-wapper {
   font-size: 1.5rem;
 }
 
@@ -47,9 +45,8 @@ header  li {
   display:block
 }
 
-header .header-wapper a{
+header .header-wapper a {
   color:white;
-
 }
 
 footer {
@@ -69,4 +66,9 @@ footer {
 li {
   list-style: none;
   float: left;
+}
+
+.notice {
+  text-align: center;
+  margin-top: 30px;
 }
