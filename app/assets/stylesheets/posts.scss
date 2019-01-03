@@ -1,3 +1,21 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* 投稿一覧画面のレイアウト */
+
+.post_container {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.post_contents {
+  margin-bottom: 80px ;
+}
+
+.post_contents img {
+  width: 500px!important;
+  height: 400px!important;
+  padding-top: 50px;
+}

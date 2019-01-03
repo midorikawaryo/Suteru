@@ -8,8 +8,9 @@
     <!-- viewport meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  </head>
 
+  </head>
+<body>
   <header>
     <dev class="header-wapper">
       <div class="headr-nav">
@@ -18,6 +19,7 @@
           <li><%= link_to "投稿一覧", posts_path %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
           <li><%= link_to "プロフィール", user_path(id: current_user.id)%></li>
+          <li><%= link_to '新規投稿', new_post_path %></li>
         <% else %>
           <li><%= link_to "新規登録", new_user_registration_path %></li>
           <li><%= link_to "ログイン", new_user_session_path %></li>
@@ -35,9 +37,9 @@
     <% end %>
   </div>
 
-  <body>
+  <div class="main_contents">
     <%= yield %>
-  </body>
+  </div>
 
   <footer>
     <div class="footer-wapper">
@@ -49,4 +51,5 @@
     <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   </footer>
+<body>
 </html>
