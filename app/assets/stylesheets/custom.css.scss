@@ -1,0 +1,45 @@
+/* mixins */
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* フォームのレイアウト */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+  margin: 0 auto;
+}
+
+.form {
+  margin-top: 50px;
+}
+
+.field {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.form-title {
+  text-align: center;
+}
+
+.actions {
+  width: 200px;
+  margin: 25px auto 0 auto;
+}
+
+.devise_mapping {
+  text-align: center;
+  padding: 30px;
+}
