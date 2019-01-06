@@ -1,26 +1,23 @@
+/* 全ページ共通部レイアウト */
+
 html {
   height: 100%;
+  font-family: "Hiragino Kaku Gothic ProN";
   font-size:62.5%;
   margin: 0;
   padding: 0;
-}
-
-body {
   position: relative;
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
 }
 
 div {
   display: block;
 }
 
-.main_contents {
-  height: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px
-
+body {
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header  {
@@ -33,12 +30,26 @@ header  {
    position: fixed;
  }
 
+footer {
+   margin-top: auto;
+   background-color: gray;
+ }
+
+ li {
+   list-style: none;
+   float: left;
+ }
+
 header .header-wapper {
   font-size: 1.5rem;
 }
 
 .header-nav {
   margin: auto;
+}
+
+.main_contents {
+  margin-top: 50px;
 }
 
 .headr-nav img {
@@ -49,31 +60,19 @@ header .header-wapper {
 header  li {
   padding: 10px 15px;
   float: right;
-  display:block
+  display: block;
 }
 
 header .header-wapper a {
   color:white;
 }
 
-footer {
-  background-color: gray;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 50px
-}
-
 .footer-wapper{
-  margin-top: auto;
   text-align: center;
   color: white;
 }
 
-li {
-  list-style: none;
-  float: left;
-}
+
 
 .notice {
   text-align: center;
