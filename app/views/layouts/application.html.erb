@@ -14,7 +14,7 @@
   <header>
     <dev class="header-wapper">
       <div class="headr-nav">
-        <%= link_to image_tag('/Suteru-logo.png', { :border => '0', :alt => 'TOP'}), top_index_path %>
+        <%= link_to image_tag('/Suteru-logo.png', { :border => '0', :alt => 'LOGO Image'}), top_index_path %>
         <% if user_signed_in? %>
           <li><%= link_to "投稿一覧", posts_path %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
@@ -28,16 +28,15 @@
     </dev>
   </header>
 
-  <div class="notice">
-    <% if notice %>
-      <p class="alert alert-notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-error"><%= alert %></p>
-    <% end %>
-  </div>
-
   <div class="main_contents">
+    <div class="notice">
+      <% if notice %>
+        <p class="alert alert-notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-error"><%= alert %></p>
+      <% end %>
+    </div>
     <%= yield %>
   </div>
 

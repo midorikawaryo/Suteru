@@ -15,6 +15,11 @@
         </div>
 
         <div class="field">
+          <%= f.label :画像 ,class: "control-label" %>
+          <%= f.file_field :image, autofocus: true, class: "form-control" %>
+        </div>
+
+        <div class="field">
           <%= f.label :password, class: "control-label" %>
           <% if @validatable %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>

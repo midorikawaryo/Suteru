@@ -1,0 +1,23 @@
+/* 投稿詳細画面のレイアウト  */
+
+.contents-wrapper {
+  width: 600px;
+}
+
+.contents-header {
+  height: 30px;
+}
+
+.contents-header a {
+  font-size: 2rem;
+}
+
+.contents-wrapper img {
+  width: 400px!important;
+  height: 300px!important;
+}
+
+.post_user p {
+  display: block;
+  text-align: left;
+}
