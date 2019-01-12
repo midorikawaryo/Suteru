@@ -12,23 +12,26 @@
   </head>
 <body>
   <header>
-    <dev class="header-wapper">
-      <div class="headr-nav">
-        <%= link_to image_tag('/Suteru-logo.png', { :border => '0', :alt => 'LOGO Image'}), top_index_path %>
-        <% if user_signed_in? %>
-          <li><%= link_to "投稿一覧", posts_path %></li>
-          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-          <li><%= link_to "プロフィール", user_path(id: current_user.id)%></li>
-          <li><%= link_to '新規投稿', new_post_path %></li>
-        <% else %>
-          <li><%= link_to "新規登録", new_user_registration_path %></li>
-          <li><%= link_to "ログイン", new_user_session_path %></li>
-        <% end %>
-      </div>
-    </dev>
+    <div class="header-wapper">
+      <%= link_to image_tag('/Suteru-logo.png', { :border => '0', :alt => 'LOGO Image'}), top_index_path %>
+      <nav aria-label="メニュー">
+        <ul class="headr-nav">
+          <% if user_signed_in? %>
+            <li><%= link_to "投稿一覧", posts_path %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to "プロフィール", user_path(id: current_user.id)%></li>
+            <li><%= link_to '新規投稿', new_post_path %></li>
+          <% else %>
+            <li><%= link_to "新規登録", new_user_registration_path %></li>
+            <li><%= link_to "ログイン", new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <div class="main_contents">
+  <main class="main_contents">
+    <% if notice || alert %>
     <div class="notice">
       <% if notice %>
         <p class="alert alert-notice"><%= notice %></p>
@@ -37,8 +40,9 @@
         <p class="alert alert-error"><%= alert %></p>
       <% end %>
     </div>
+    <% end %>
     <%= yield %>
-  </div>
+  </main>
 
   <footer>
     <div class="footer-wapper">
@@ -46,9 +50,9 @@
     </div>
 
     <!-- jQuery、Popper.js、Bootstrap JS -->
-    <script src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   </footer>
 <body>
 </html>

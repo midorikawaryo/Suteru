@@ -20,16 +20,6 @@ body {
   min-height: 100vh;
 }
 
-header  {
-   top: 0px;
-   height: 50px;
-   width: 100%;
-   background-color: #221f20;
-   box-shadow: 0 0 2px #666, 0 0 8px #222;
-   opacity: 0.9;
-   position: fixed;
- }
-
 footer {
    margin-top: auto;
    background-color: gray;
@@ -37,7 +27,10 @@ footer {
 
  li {
    list-style: none;
-   float: left;
+ }
+ main {
+   display: block;
+   padding-top: 80px;
  }
 
 header .header-wapper {
@@ -48,25 +41,40 @@ header .header-wapper {
   margin: auto;
 }
 
-.main_contents {
-  margin-top: 50px;
-}
-
 .headr-nav img {
   width: 120px;
   height: 60px;
 }
-
-header  li {
-  padding: 10px 15px;
-  float: right;
-  display: block;
+header {
+  top: 0px;
+  width: 100%;
+  background-color: #221f20;
+  box-shadow: 0 0 2px #666, 0 0 8px #222;
+  position: fixed;
+  ul{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  li {
+    padding: 10px 15px;
+    display: block;
+  }
+  img{
+    height: 54px;
+  }
 }
-
-header .header-wapper a {
-  color:white;
+.header-wapper{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: 80px;
+  a {
+    color: white;
+  }
 }
-
 .footer-wapper{
   text-align: center;
   color: white;
@@ -80,5 +88,9 @@ header .header-wapper a {
 
 .notice {
   text-align: center;
-  margin-top: 30px;
+  p{
+    margin-bottom: 0;
+    color: #62d852;
+    padding: 10px 0;
+  }
 }

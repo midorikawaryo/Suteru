@@ -1,26 +1,24 @@
-<div class="contents-wrapper bg-info mx-auto ">
-    <div class="contents-header">
-      <%= link_to  @post.user.name,user_path(id: @post.user.id) %> の投稿
+<article class="contents-wrapper bg-info mx-auto ">
+  <div class="card-body">
+    <h1 class="card-title"><%= @post.title %></h1>
+    <ul>
+      <li><%= link_to "編集", edit_post_path(@post.id) %></li>
+      <li><%= link_to "削除", post_path(@post.id),method: :delete,data: { confirm: '本当に削除していいですか？' } %></li>
+      <% unless @post.user_id == current_user.id %>
+        <% if @favorite.present? %>
+          <li><%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %></li>
+        <% else %>
+          <li><%= link_to 'お気に入りする', favorites_path(post_id: @post.id), method: :post, class: 'btn btn-primary' %></li>
+        <% end %>
+      <% end %>
+    </ul>
+    <div class="card-body">
+      <h2 class="card-title">なぜ捨てるのか。</h2>
+      <p class="card-text"><%= @post.comment %></p>
     </div>
+  </div>
+  <div class="contents-header">
+    <%= link_to  @post.user.name,user_path(id: @post.user.id) %> の投稿
     <%= image_tag @post.image %>
-    <div class="content-text card-body">
-      <h4 class="card-title"><%= @post.title %></h4>
-      <ul>
-        <li><%= link_to "編集", edit_post_path(@post.id) %></li>
-        <li><%= link_to "削除", post_path(@post.id),method: :delete,data: { confirm: '本当に削除していいですか？' } %></li>
-        <% unless @post.user_id == current_user.id %>
-          <% if @favorite.present? %>
-            <li><%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %></li>
-          <% else %>
-            <li><%= link_to 'お気に入りする', favorites_path(post_id: @post.id), method: :post, class: 'btn btn-primary' %></li>
-          <% end %>
-      </ul>
-      <div class="card-body">
-        <h4>なぜ捨てるのか。</h4>
-        <p class="card-text"><%= @post.comment %></p>
-      </div>
-    </div>
-</div>
-
-
-<% end %>
+  </div>
+</article>
