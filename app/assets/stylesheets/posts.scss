@@ -19,10 +19,27 @@
 
 .post_contents {
   margin-bottom: 80px ;
+  overflow: hidden;
+  background-color: #221f20;
+  img {
+    width: 650px!important;
+    height: 500px!important;
+    padding-top: 50px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+   &:hover{
+     img {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+     }
+   }
+  }
 }
 
-.post_contents img {
-  width: 650px!important;
-  height: 500px!important;
-  padding-top: 50px;
-}

@@ -1,9 +1,9 @@
 <article class="contents-wrapper bg-info mx-auto ">
-  <div class="card-body">
+  <div class="contentes-post">
     <h1 class="card-title"><%= @post.title %></h1>
     <ul>
-      <li><%= link_to "編集", edit_post_path(@post.id) %></li>
-      <li><%= link_to "削除", post_path(@post.id),method: :delete,data: { confirm: '本当に削除していいですか？' } %></li>
+      <li><%= link_to "編集", edit_post_path(@post.id),class: 'btn btn-primary' %></li>
+      <li><%= link_to "削除", post_path(@post.id),class: 'btn btn-danger',method: :delete,data: { confirm: '本当に削除していいですか？' } %></li>
       <% unless @post.user_id == current_user.id %>
         <% if @favorite.present? %>
           <li><%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %></li>
@@ -12,13 +12,15 @@
         <% end %>
       <% end %>
     </ul>
-    <div class="card-body">
+    <div class="contens-main">
       <h2 class="card-title">なぜ捨てるのか。</h2>
       <p class="card-text"><%= @post.comment %></p>
     </div>
   </div>
   <div class="contents-header">
-    <%= link_to  @post.user.name,user_path(id: @post.user.id) %> の投稿
-    <%= image_tag @post.image %>
+    <p><%= link_to  @post.user.name,user_path(id: @post.user.id) %> の投稿</p>
+    <figure>
+      <%= image_tag @post.image %>
+    </figure>
   </div>
 </article>
