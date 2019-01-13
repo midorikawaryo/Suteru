@@ -1,4 +1,4 @@
-<article class="contents-wrapper bg-info mx-auto ">
+<article class="contents-wrapper mx-auto ">
   <div class="contentes-post">
     <h1 class="card-title"><%= @post.title %></h1>
     <ul>
@@ -14,11 +14,14 @@
     </ul>
     <div class="contens-main">
       <h2 class="card-title">なぜ捨てるのか。</h2>
-      <p class="card-text"><%= @post.comment %></p>
+      <p class="post-text"><%= @post.comment %></p>
     </div>
   </div>
   <div class="contents-header">
-    <p><%= link_to  @post.user.name,user_path(id: @post.user.id) %> の投稿</p>
+    <ul>
+      <li class="icon"><%= image_tag @post.user.image %></li>
+      <li class="icon-name"><%= link_to  @post.user.name,user_path(id: @post.user.id) %></li>
+    </ul>
     <figure>
       <%= image_tag @post.image %>
     </figure>
