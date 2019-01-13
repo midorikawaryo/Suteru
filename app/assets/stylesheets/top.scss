@@ -28,13 +28,14 @@
     background-color: #221f20;
     box-shadow: 0  2px 6px rgba(0,0,0,0.16);
     border: none;
+    color: #fff;
     opacity: 0.8;
     font-size: 16px;
     padding: 0;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
   }
-
 }
 
 .st-top__service{
@@ -43,14 +44,14 @@
   h2{
     text-align: center;
     margin-bottom: 40px;
-    font-size: 24px;
+    font-size: 30px;
   }
   ul{
     display: flex;
     justify-content: space-between;
   }
   li{
-    width: 32%;
+    width: 29%;
     box-shadow: 0 2px 6px rgba(0,0,0,0.16);
   }
   i{
@@ -67,6 +68,7 @@
       height: 60px;
     }
   }
+  
   section {
     display: flex;
     flex-direction: column;
@@ -80,5 +82,6 @@
   }
   p{
     padding: 0 20px;
+    font-size: 12px;
   }
 }
