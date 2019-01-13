@@ -1,22 +1,22 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-wrapper">
+      <div class="form">
+        <div class ="form-title">
+          <h2>ログイン</h2>
+        </div>
 
-    <div class="form">
-      <div class ="form-title">
-        <h2>ログイン</h2>
-      </div>
+        <div class="field">
+          <%= f.label :email, class: "control-label" %>
+          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :email, class: "control-label" %>
-        <%= f.email_field :email, autofocus: true, class: "form-control" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password, class: "control-label" %>
-        <% if @validatable %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %>
-        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-      </div>
+        <div class="field">
+          <%= f.label :password, class: "control-label" %>
+          <% if @validatable %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        </div>
 
         <% if devise_mapping.rememberable? -%>
           <div class="field">
@@ -32,5 +32,6 @@
         <div class="devise_mapping">
           <%= render "devise/shared/links" %>
         </div>
+      </div>
     </div>
   <% end %>
