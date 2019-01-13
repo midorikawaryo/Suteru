@@ -1,7 +1,10 @@
 <% @posts.each do |post| %>
   <div class="post_container">
     <div class="post_contents card-img-top text-white ">
-      <%= post.user.name %>の投稿
+      <ul>
+        <li class="icon"><%= image_tag post.user.image %></li>
+        <li class="icon-name"><%= link_to  post.user.name,user_path(id: post.user.id) %></li>
+      </ul>
       <%= link_to (image_tag post.image),post_path(post.id)%>
       <div class="card-body">
         <h4 class="card-title"><%= post.title %></h4>

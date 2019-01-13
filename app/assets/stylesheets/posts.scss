@@ -6,8 +6,7 @@
 
 .post_container {
   width: 650px;
-  margin: 0 auto;
-  padding-top: 50px;
+  margin:  auto;
   text-align: center;
 }
 
@@ -21,10 +20,26 @@
   margin-bottom: 80px ;
   overflow: hidden;
   background-color: #221f20;
+  ul{
+    display: flex;
+    align-items: center;
+    padding: 8px 30px;
+    margin-bottom: 0;
+    li {
+      padding: 0 7px;
+    }
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%; 
+    }
+    a {
+      color: white;
+    }
+  }
   img {
-    width: 650px!important;
-    height: 500px!important;
-    padding-top: 50px;
+    width: 650px;
+    height: 500px;
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: .4s ease-in-out;
@@ -43,10 +58,4 @@
   }
 }
 
-.contens-main {
-  .post-text {
-    margin-top: 30px;
-    min-height: 200px;
-  }
-}
 
