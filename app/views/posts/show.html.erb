@@ -2,6 +2,7 @@
   <div class="contentes-post">
     <h1 class="card-title"><%= @post.title %></h1>
     <ul>
+      <li><%= social_share_button_tag(@post.title,'data-twitter-title' => "「#{@post.title}」を捨てます！") %></li>
       <li><%= link_to "編集", edit_post_path(@post.id),class: 'btn btn-primary' %></li>
       <li><%= link_to "削除", post_path(@post.id),class: 'btn btn-danger',method: :delete,data: { confirm: '本当に削除していいですか？' } %></li>
       <% unless @post.user_id == current_user.id %>
