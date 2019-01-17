@@ -23,7 +23,7 @@ class User < ApplicationRecord
                       provider: auth.provider,
                       uid:      auth.uid,
                       name: auth.info.name,
-                      image: auth.info.picture.data.url,
+                      image: auth.info.image,
                       password: Devise.friendly_token[0, 20],
                                    )
     end
