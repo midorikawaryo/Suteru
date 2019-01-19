@@ -1,3 +1,56 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* ユーザー詳細画面レイアウト */
+
+/* showにも同記載あり */
+.contents-wrapper-user {
+    width: 800px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 140px 50px 60px;
+    background-color: #221f20;
+    color: #fff;
+  }
+
+  .contents-user {
+      width: 100%;
+      padding: 30px 30px;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      ul {
+        display: flex;
+        align-items: center;
+        .post-edit-favorite {
+            justify-content: space-between;
+        }
+        li {
+            padding: 10px 15px;
+        }
+      }
+      img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%; 
+      }
+  }
+
+.user-content{
+    margin-left: 20px;
+    width: 500px
+}
+
+.contents-user_post {
+    width: 80%;
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        li {
+            margin: 5px;
+        }
+    }   
+}

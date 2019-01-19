@@ -2,7 +2,7 @@
   <div class="contentes-post">
     <h1 class="card-title"><%= @post.title %></h1>
     <ul>
-      <li><%= social_share_button_tag(@post.title,'data-twitter-title' => "「#{@post.title}」を捨てます！") %></li>
+      <li><%= social_share_button_tag(@post.title,'data-twitter-title' => "「#{@post.title}」を捨てます！ #Suteru ") %></li>
       <li><%= link_to "編集", edit_post_path(@post.id),class: 'btn btn-primary' %></li>
       <li><%= link_to "削除", post_path(@post.id),class: 'btn btn-danger',method: :delete,data: { confirm: '本当に削除していいですか？' } %></li>
       <% unless @post.user_id == current_user.id %>
@@ -15,16 +15,19 @@
     </ul>
     <div class="contens-main">
       <h2 class="card-title">なぜ捨てるのか。</h2>
-      <p class="post-text"><%= @post.comment %></p>
+      <h3 class="post-text"><%= @post.comment %></h3>
     </div>
   </div>
   <div class="contents-header">
     <ul>
       <li class="icon"><%= image_tag @post.user.image %></li>
       <li class="icon-name"><%= link_to  @post.user.name,user_path(id: @post.user.id) %></li>
+      <time datetime="<%= @post.created_at %>">
+        <%= time_ago_in_words(@post.created_at) %>
+      </time>
     </ul>
     <figure>
-      <%= image_tag @post.image %>
+      <%= image_tag @post.image %>
     </figure>
   </div>
 </article>
