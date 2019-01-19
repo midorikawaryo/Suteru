@@ -9,7 +9,9 @@
       <ul class="post-edit-favorite">
         <li>捨てた数</li>
         <li><%= "#{@posts_count}件"%> </li>
-        <li><%= link_to 'プロフィール編集',edit_user_registration_path(id: current_user.id) %></li>
+        <% if @user.id == current_user.id %>
+          <li><%= link_to 'プロフィール編集',edit_user_registration_path(id: current_user.id) %></li>
+        <% end%>
         <li><%= link_to "お気に入り", favorites_path(id: current_user.id) %></li>
       </ul>
     </div>
