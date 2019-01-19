@@ -3,11 +3,14 @@
     <div class="post_contents card-img-top text-white ">
       <ul>
         <li class="icon"><%= image_tag post.user.image %></li>
-        <li class="icon-name"><%= link_to  post.user.name,user_path(id: post.user.id) %></li>
+        <h2><li class="icon-name"><%= link_to  post.user.name,user_path(id: post.user.id) %></li></h2>
+        <time datetime="<%= post.created_at %>">
+          <%= time_ago_in_words(post.created_at) %>
+        </time>
       </ul>
       <%= link_to (image_tag post.image),post_path(post.id)%>
       <div class="card-body">
-        <h4 class="card-title"><%= post.title %></h4>
+        <h2 class="card-title"><%= post.title %></h4>
       </div>
     </div>
   </div>
