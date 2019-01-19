@@ -23,10 +23,12 @@
   <div class="contents-header">
     <ul>
       <li class="icon"><%= image_tag @post.user.image %></li>
-      <li class="icon-name"><%= link_to  @post.user.name,user_path(id: @post.user.id) %></li>
-      <time datetime="<%= @post.created_at %>">
-        <%= time_ago_in_words(@post.created_at) %>
-      </time>
+      <li class="icon-name"><%= link_to  @post.user.name,user_path(id: @post.user.id),data: {"turbolinks" => false} %></li>
+      <li>
+        <time datetime="<%= @post.created_at %>">
+          <%= time_ago_in_words(@post.created_at) %>
+        </time>
+      </li>
     </ul>
     <figure>
       <%= image_tag @post.image %>

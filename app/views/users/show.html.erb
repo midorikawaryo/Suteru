@@ -3,24 +3,59 @@
     <p class="icon"><%= image_tag @user.image %></p>
     <div class="user-content">
       <ul class="name-text">
-        <h2><li><%= @user.name %></li></h2>
+        <h2><li><%= @user.name  %></li></h2>
         <h3></h3><li><%= @user.comment %></li></h3>
       </ul>
       <ul class="post-edit-favorite">
         <li>捨てた数</li>
         <li><%= "#{@posts_count}件"%> </li>
         <% if @user.id == current_user.id %>
-          <li><%= link_to 'プロフィール編集',edit_user_registration_path(id: current_user.id) %></li>
+          <li class="st-link">
+            <%= link_to  edit_user_registration_path(id: current_user.id) do %>
+              <span>プロフィール編集</span>
+            <% end %>
+          </li>
         <% end%>
-        <li><%= link_to "お気に入り", favorites_path(id: current_user.id) %></li>
+        <li class="st-link">
+          <%= link_to favorites_path(id: current_user.id) do%>
+            <span>お気に入り</span>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>
-  <% @user_posts.each do |user_post| %>
+ 
     <div class="contents-user_post">
-      <ul>
-        <li><%= image_tag user_post.image  %></li>
+      <ul id="sc-modal__ul">
+      <% @user_posts.each do |user_post| %>
+        <li>
+          <button class="sc-modal" type="button"><%= image_tag user_post.image  %></button>
+          <%= link_to "",post_path(user_post.id) %>
+        </li>
+      <% end %>
       </ul>
+      <div id="sc-hidden"/>
     </div>
-  <% end %>
+
 </article>
+
+<script>
+const modalAction = document.querySelectorAll('.sc-modal')
+const modalRemove = document.querySelector('#sc-hidden')
+const modalUl = document.querySelector('#sc-modal__ul')
+modalAction.forEach(element => {
+  element.addEventListener('click', function (e) {
+    e.currentTarget.parentNode.classList.add('active')
+    modalRemove.classList.add('active')
+  })
+})
+
+modalRemove.addEventListener('click', function () {
+  let item = modalUl.children;
+  for (let i = 0; i < item.length; i++) {
+    const element = item[i];
+    element.classList.remove('active')
+  }
+  modalRemove.classList.remove('active')
+})
+</script>

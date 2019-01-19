@@ -3,11 +3,55 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* 投稿一覧画面のレイアウト */
-
-.post_container {
+.st-post__list{
   width: 650px;
-  margin: 140px auto ;
+  margin: 120px auto 60px;
+  li{
+    margin-bottom: 40px;
+  }
+}
+.post_container {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  header{
+    order: 1;
+    background-color: #221f20;
+    h2{
+      color: #fff;
+    }
+  }
+  footer{
+    order: -1;
+    display: flex;
+    align-items: center;
+    background-color: #221f20;
+    padding: 10px 20px;
+    p{
+      margin-bottom: 0;
+      margin-left: 8px;
+    }
+    a{
+      font-size: 16px;
+    }
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%; 
+    }
+  }
+  time {
+    font-size: 16px;
+    color: #fff;
+    margin-left: auto;
+  }
+  
+  a {
+    color: white;
+    &:hover{
+      color: #fff;
+    }
+  }
 }
 
 .post_show_container {
@@ -17,7 +61,6 @@
 }
 
 .post_contents {
-  margin-bottom: 80px ;
   overflow: hidden;
   background-color: #221f20;
   ul{
@@ -27,15 +70,12 @@
     margin-bottom: 0;
     li {
       padding: 0 7px;
+      &:last-child{
+        margin-left: auto;
+      }
+    
     }
-    img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%; 
-    }
-    a {
-      color: white;
-    }
+    
   }
   img {
     width: 650px;

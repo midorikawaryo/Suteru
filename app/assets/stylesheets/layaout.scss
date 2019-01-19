@@ -1,4 +1,9 @@
 /* 全ページ共通部レイアウト */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
 div{
   display: block;
@@ -9,12 +14,8 @@ li{
 }
 
 html{
-  height: 100%;
   font-family: "Hiragino Kaku Gothic ProN";
   font-size:62.5%;
-  margin: 0;
-  padding: 0;
-  position: relative;
 }
 
 body{
@@ -23,8 +24,11 @@ body{
   flex-direction: column;
   min-height: 100vh;
 }
-
-header{
+button{
+  border: none;
+  cursor: pointer;
+}
+.st-header{
   top: 0px;
   width: 100%;
   background-color: #221f20;
@@ -46,13 +50,18 @@ header{
   .header-wapper{
     font-size: 1.5rem;
   }
+  a {
+    &:hover {
+      color: #fff;
+    }
+  }
 }
 
 main{
   display: block;
 }
 
-footer{
+.st-footer{
    margin-top: auto;
    background-color: gray;
  }

@@ -1,17 +1,21 @@
+<ul class="st-post__list">
 <% @posts.each do |post| %>
-  <div class="post_container">
+<li>
+  <article class="post_container">
+    <header class="card-body">
+      <h2 class="card-title"><%= post.title %></h2>
+    </header>
     <div class="post_contents card-img-top text-white ">
-      <ul>
-        <li class="icon"><%= image_tag post.user.image %></li>
-        <h2><li class="icon-name"><%= link_to  post.user.name,user_path(id: post.user.id) %></li></h2>
-        <time datetime="<%= post.created_at %>">
-          <%= time_ago_in_words(post.created_at) %>
-        </time>
-      </ul>
       <%= link_to (image_tag post.image),post_path(post.id)%>
-      <div class="card-body">
-        <h2 class="card-title"><%= post.title %></h4>
-      </div>
     </div>
-  </div>
+    <footer>
+      <i><%= image_tag post.user.image %></i>
+      <p><%= link_to  post.user.name,user_path(id: post.user.id),data: {"turbolinks" => false} %></p>
+      <time datetime="<%= post.created_at %>">
+        <%= time_ago_in_words(post.created_at) %>
+      </time>
+    </footer>
+  </article>
+</li>
 <% end %>
+</ul>

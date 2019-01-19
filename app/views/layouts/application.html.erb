@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
 <body>
-  <header>
+  <header class="st-header">
     <div class="header-wapper">
       <%= link_to image_tag('/Suteru-logo.png', { :border => '0', :alt => 'LOGO Image'}), top_index_path %>
       <nav aria-label="メニュー">
@@ -18,7 +18,7 @@
           <% if user_signed_in? %>
             <li><%= link_to "投稿一覧", posts_path %></li>
             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-            <li><%= link_to "プロフィール", user_path(id: current_user.id)%></li>
+            <li><%= link_to "プロフィール", user_path(id: current_user.id), data: {"turbolinks" => false}%></li>
             <li><%= link_to '新規投稿', new_post_path %></li>
           <% else %>
             <li><%= link_to "投稿一覧", posts_path %></li>
@@ -44,7 +44,7 @@
     <%= yield %>
   </main>
 
-  <footer>
+  <footer class="st-footer">
     <div class="footer-wapper">
       <p>© 2019 Suteru,inc.</p>
     </div>

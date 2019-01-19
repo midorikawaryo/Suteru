@@ -1,18 +1,21 @@
-<h1>お気に入り一覧</h1>
-
-<% @favorites_posts.each do |favorites_post| %>
-
-  <p>
-    <strong>Image:</strong>
-    <%= image_tag favorites_post.image %>
-  </p>
-
-  <p>投稿者</p>
-  <p><%= favorites_post.user.name %></p>
-
-  <p>タイトル</p>
-  <p><%= favorites_post.title %></p>
-
-  <p>コメント</p>
-  <p><%= favorites_post.comment %></p>
+<ul class="st-post__list">
+<% @favorites_posts.each do |post| %>
+<li>
+  <article class="post_container">
+    <header class="card-body">
+      <h2 class="card-title"><%= post.title %></h2>
+    </header>
+    <div class="post_contents card-img-top text-white ">
+      <%= link_to (image_tag post.image),post_path(post.id)%>
+    </div>
+    <footer>
+      <i><%= image_tag post.user.image %></i>
+      <p><%= link_to  post.user.name,user_path(id: post.user.id),data: {"turbolinks" => false} %></p>
+      <time datetime="<%= post.created_at %>">
+        <%= time_ago_in_words(post.created_at) %>
+      </time>
+    </footer>
+  </article>
+</li>
 <% end %>
+</ul>
