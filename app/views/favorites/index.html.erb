@@ -1,21 +1,29 @@
-<ul class="st-post__list">
-<% @favorites_posts.each do |post| %>
-<li>
-  <article class="post_container">
-    <header class="card-body">
-      <h2 class="card-title"><%= post.title %></h2>
-    </header>
-    <div class="post_contents card-img-top text-white ">
-      <%= link_to (image_tag post.image),post_path(post.id)%>
+<%if @favorites_posts.empty? %>
+  <article class="st-post__list">
+    <div class="favoritesーnil">
+    <p>お気に入りはありません</p>
     </div>
-    <footer>
-      <i><%= image_tag post.user.image %></i>
-      <p><%= link_to  post.user.name,user_path(id: post.user.id),data: {"turbolinks" => false} %></p>
-      <time datetime="<%= post.created_at %>">
-        <%= time_ago_in_words(post.created_at) %>
-      </time>
-    </footer>
   </article>
-</li>
-<% end %>
-</ul>
+<% else %>
+  <ul class="st-post__list">
+  <% @favorites_posts.each do |post| %>
+  <li>
+    <article class="post_container">
+      <header class="card-body">
+        <h2 class="card-title"><%= post.title %></h2>
+      </header>
+      <div class="post_contents card-img-top text-white ">
+        <%= link_to (image_tag post.image),post_path(post.id)%>
+      </div>
+      <footer>
+        <i><%= image_tag post.user.image %></i>
+        <p><%= link_to  post.user.name,user_path(id: post.user.id),data: {"turbolinks" => false} %></p>
+        <time datetime="<%= post.created_at %>">
+          <%= time_ago_in_words(post.created_at) %>
+        </time>
+      </footer>
+    </article>
+  </li>
+  <% end %>
+  </ul>
+<% end%>

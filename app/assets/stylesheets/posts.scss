@@ -98,5 +98,15 @@
   }
 }
 
-
+@media　screen and (max-width: 680px) {
+  .st-post__list {
+    width: 100%;
+  }
+  .post_contents {
+    img {
+      width: 100%;
+      height: 40vh;
+    }
+  }
+}
 
