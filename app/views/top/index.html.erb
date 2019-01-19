@@ -3,10 +3,12 @@
     <h1>「モノ」を捨てよう。</h1>
     <p>Suteruは「モノを捨てる」ことにフォーカスしたシェアサービスです。</p>
     <div class="btn-wrapper">
+    <% unless user_signed_in? %>
       <p><%= link_to "新規登録", new_user_registration_path %></p>
       <%= link_to 'Googleで登録', user_google_omniauth_authorize_path,:class=>"btn-google" %>
       <%= link_to 'Facebookで登録',user_facebook_omniauth_authorize_path,:class=>"btn-facebook" %>
       <%= link_to 'Twitterで登録',user_twitter_omniauth_authorize_path,:class=>"btn-twitter" %>
+    <% end%>
     </div>
   </div>
 </div>

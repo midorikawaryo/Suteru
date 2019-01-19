@@ -1,6 +1,10 @@
 <article class="contents-wrapper-user mx-auto">
   <div class="contents-user">
+  <% if current_user.image.file.nil? %>
+    <p class="icon"><%= image_tag 'ic_noimage.jpg' %></p>
+  <% else%>
     <p class="icon"><%= image_tag @user.image %></p>
+  <% end%>
     <div class="user-content">
       <ul class="name-text">
         <h2><li><%= @user.name  %></li></h2>
