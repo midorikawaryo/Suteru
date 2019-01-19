@@ -7,13 +7,13 @@
         <li><%= link_to "編集", edit_post_path(@post.id),class: 'btn btn-primary' %></li>
         <li><%= link_to "削除", post_path(@post.id),class: 'btn btn-danger',method: :delete,data: { confirm: '本当に削除していいですか？' } %></li>
       <% end %>
-      <% unless @post.user_id == current_user.id %>
-        <% if @favorite.present? %>
-          <li><%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %></li>
-        <% else %>
-          <li><%= link_to 'お気に入りする', favorites_path(post_id: @post.id), method: :post, class: 'btn btn-primary' %></li>
+        <% unless @post.user_id == current_user.id %>
+          <% if @favorite.present? %>
+            <li><%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %></li>
+          <% else %>
+            <li><%= link_to 'お気に入りする', favorites_path(post_id: @post.id), method: :post, class: 'btn btn-primary' %></li>
+          <% end %>
         <% end %>
-      <% end %>
     </ul>
     <div class="contens-main">
       <h2 class="card-title">なぜ捨てるのか。</h2>

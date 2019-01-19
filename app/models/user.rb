@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i(google facebook twitter)
 
-  validates :name, presence: true
+  validates :name,:image, presence: true
   has_many :posts
   has_many :favorites, dependent: :destroy
   has_many :favorite_posts, through: :favorites, source: :post

@@ -7,6 +7,7 @@ ja:
       post:
         title: "「捨てるもの」"
         comment: "「なぜ捨てるのか」"
+        image: "画像"
       contact:
         name: "名前"
         email: "メールアドレス"
@@ -15,6 +16,7 @@ ja:
         title: "タイトル"
         name: "名前"
         email: "メールアドレス"
+        image: "画像"
         content: "内容"
         current_password: "現在のパスワード"
         password: "パスワード"
