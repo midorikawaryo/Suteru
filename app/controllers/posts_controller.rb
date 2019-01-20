@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :destroy, :show]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.all.order(created_at: :desc)
@@ -47,6 +48,14 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def ensure_correct_user
+    @post = Post.find_by(id:params[:id])
+    if @post.user_id != current_user.id
+      flash[:notice] = "権限がありません！"
+      redirect_to posts_path
+    end
   end
 
 end
