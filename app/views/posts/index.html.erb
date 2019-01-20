@@ -9,7 +9,11 @@
       <%= link_to (image_tag post.image),post_path(post.id)%>
     </div>
     <footer>
-      <i><%= image_tag post.user.image %></i>
+      <% if post.user.image.file.nil? %>
+        <i><%= image_tag 'ic_noimage.jpg' %></i>
+      <% else%>
+        <i><%= image_tag post.user.image %></i>
+      <% end%>
       <p><%= link_to  post.user.name,user_path(id: post.user.id),data: {"turbolinks" => false} %></p>
       <time datetime="<%= post.created_at %>">
         <%= time_ago_in_words(post.created_at) %>

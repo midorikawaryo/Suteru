@@ -44,22 +44,22 @@
 </article>
 
 <script>
-const modalAction = document.querySelectorAll('.sc-modal')
-const modalRemove = document.querySelector('#sc-hidden')
-const modalUl = document.querySelector('#sc-modal__ul')
-modalAction.forEach(element => {
-  element.addEventListener('click', function (e) {
-    e.currentTarget.parentNode.classList.add('active')
-    modalRemove.classList.add('active')
+  const modalAction = document.querySelectorAll('.sc-modal')
+  const modalRemove = document.querySelector('#sc-hidden')
+  const modalUl = document.querySelector('#sc-modal__ul')
+  modalAction.forEach(element => {
+    element.addEventListener('click', function (e) {
+      e.currentTarget.parentNode.classList.add('active')
+      modalRemove.classList.add('active')
+    })
   })
-})
 
-modalRemove.addEventListener('click', function () {
-  let item = modalUl.children;
-  for (let i = 0; i < item.length; i++) {
-    const element = item[i];
-    element.classList.remove('active')
-  }
-  modalRemove.classList.remove('active')
-})
+  modalRemove.addEventListener('click', function () {
+    let item = modalUl.children;
+    for (let i = 0; i < item.length; i++) {
+      const element = item[i];
+      element.classList.remove('active')
+    }
+    modalRemove.classList.remove('active')
+  })
 </script>

@@ -4,106 +4,105 @@
 
 /* ユーザー詳細画面レイアウト */
 
-/* showにも同記載あり */
 .contents-wrapper-user {
-    width: 800px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    margin: 140px 50px 60px;
-    background-color: #221f20;
-    color: #fff;
-  }
+  width: 800px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 140px 50px 60px;
+  background-color: #221f20;
+  color: #fff;
+}
 
-  .contents-user {
-      width: 100%;
-      padding: 30px 30px;
-      display: flex;
-      align-items: center;
-      font-size: 16px;
-      ul {
-        display: flex;
-        align-items: center;
-        .post-edit-favorite {
-            justify-content: space-between;
-        }
-        li {
-            padding: 10px 15px;
-        }
-      }
-      img {
-        width: 180px;
-        height: 180px;
-        border-radius: 50%; 
-      }
+.contents-user {
+  width: 100%;
+  padding: 30px 30px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  ul {
+    display: flex;
+    align-items: center;
+    .post-edit-favorite {
+        justify-content: space-between;
+    }
+    li {
+        padding: 10px 15px;
+    }
   }
+  img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; 
+  }
+}
 
 .user-content{
-    margin-left: 20px;
-    width: 500px
+  margin-left: 20px;
+  width: 500px
 }
 
 .contents-user_post {
-    ul {
-        padding: 0 30px 30px;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        li {
-            width: 225px;
-            height: 225px;
-            margin: 5px;
-            a{
-                display: none;
-            }
+  ul {
+    padding: 0 30px 30px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    li {
+      width: 225px;
+      height: 225px;
+      margin: 5px;
+      a{
+          display: none;
+      }
+    }
+    li.active{
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto;
+      width: 560px;
+      height: 560px;
+      z-index: 11;
+      img{
+          object-fit: contain;
+      }
+      a{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        &:hover{
+          background-color: rgba(0,0,0,0.2);
         }
-        li.active{
-            position: fixed;
-            top: 0;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            margin: auto;
-            width: 560px;
-            height: 560px;
-            z-index: 11;
-            img{
-                object-fit: contain;
-            }
-            a{
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                &:hover{
-                    background-color: rgba(0,0,0,0.2);
-                }
-            }
-        }
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-        button{
-            width: 100%;
-            height: 100%;
-        }
-    }   
+      }
+    }
+      img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+      }
+      button{
+          width: 100%;
+          height: 100%;
+      }
+  }   
 }
 #sc-hidden{
-    display: none;
+  display: none;
 }
 #sc-hidden.active{
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 10;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 10;
 }
