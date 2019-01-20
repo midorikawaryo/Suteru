@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20190114014748) do
 
   create_table "posts", force: :cascade do |t|
     t.string "image"
-    t.string "title"
-    t.string "comment"
+    t.string "title", null: false
+    t.string "comment", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
