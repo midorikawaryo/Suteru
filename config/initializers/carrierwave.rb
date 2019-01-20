@@ -19,7 +19,7 @@ CarrierWave.configure do |config|
     case Rails.env
       when 'production'
         config.fog_directory = 'suteru'
-        config.asset_host = 'https://suteru.s3-ap-northeast-1.amazonaws.com'
+        config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/suteru'
       when 'development'
         config.fog_directory = 'suteru-test'
         config.asset_host = 'https://suteru-test.s3-ap-northeast-1.amazonaws.com'
