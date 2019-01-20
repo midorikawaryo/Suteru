@@ -49,7 +49,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener_web'
-  gem 'dotenv-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -67,3 +66,4 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'social-share-button'
 gem 'fog'
+gem 'dotenv-rails'
