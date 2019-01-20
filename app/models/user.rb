@@ -55,7 +55,7 @@ class User < ApplicationRecord
                       uid:      auth.uid,
                       email:    "#{auth.uid}-#{auth.provider}@example.com",
                       name: auth.info.name,
-                      image: auth.info.image.data.url,
+                      image: auth.info.image,
                       password: Devise.friendly_token[0, 20]
       )
     end
