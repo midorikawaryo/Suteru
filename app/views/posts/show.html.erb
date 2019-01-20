@@ -22,7 +22,11 @@
   </div>
   <div class="contents-header">
     <ul>
+    <% if @post.user.image.file.nil? %>
+      <li class="icon"><%= image_tag 'ic_noimage.jpg' %></li>
+    <% else%>
       <li class="icon"><%= image_tag @post.user.image %></li>
+    <% end%>
       <li class="icon-name"><%= link_to  @post.user.name,user_path(id: @post.user.id),data: {"turbolinks" => false} %></li>
       <li>
         <time datetime="<%= @post.created_at %>">
