@@ -13,18 +13,20 @@
       <ul class="post-edit-favorite">
         <li>捨てた数</li>
         <li><%= "#{@posts_count}件"%> </li>
-        <% if @user.id == current_user.id %>
-          <li class="st-link">
-            <%= link_to  edit_user_registration_path(id: current_user.id) do %>
-              <span>プロフィール編集</span>
-            <% end %>
-          </li>
+        <% if user_signed_in? %>
+          <% if @user.id == current_user.id %>
+            <li class="st-link">
+              <%= link_to  edit_user_registration_path(id: current_user.id) do %>
+                <span>プロフィール編集</span>
+              <% end %>
+            </li>
+          <% end%>
+            <li class="st-link">
+              <%= link_to favorites_path(id: current_user.id) do%>
+                <span>お気に入り</span>
+              <% end %>
+            </li>
         <% end%>
-        <li class="st-link">
-          <%= link_to favorites_path(id: current_user.id) do%>
-            <span>お気に入り</span>
-          <% end %>
-        </li>
       </ul>
     </div>
   </div>
