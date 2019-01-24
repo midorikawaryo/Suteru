@@ -72,8 +72,13 @@ main{
       margin-bottom: 0;
       color: black;
       padding: 10px 0;
-      background-color: #f3f7be;
     }
+  .alert-notice {
+    background-color: #f3f7be;
+  }
+  .alert-error {
+    background-color: #ffe2f3;
+  }
   }
 }
 
