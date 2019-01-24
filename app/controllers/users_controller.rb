@@ -17,7 +17,7 @@ before_action :ensure_correct_user, only: [:edit]
   def ensure_correct_user
     @user = User.find_by(id:params[:id])
     if @user.id != @current_user.id
-      flash[:notice] = "権限がありません！"
+      flash[:notice] = "アクセス権限がありません"
       redirect_to pictures_path
     end
   end

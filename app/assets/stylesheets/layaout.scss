@@ -63,6 +63,18 @@ button{
 
 main{
   display: block;
+  .notice {
+    height: 30px;
+    margin-top: 80px;
+    text-align: center;
+    font-size: 14px;
+    p{
+      margin-bottom: 0;
+      color: black;
+      padding: 10px 0;
+      background-color: #f3f7be;
+    }
+  }
 }
 
 .st-footer{
@@ -97,12 +109,4 @@ main{
   }
 }
 
-.notice {
-  
-  text-align: center;
-  p{
-    margin-bottom: 0;
-    color: #black;
-    padding: 10px 0;
-  }
-}
+

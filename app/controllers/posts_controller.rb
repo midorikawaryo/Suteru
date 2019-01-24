@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to posts_path, notice: "編集しました"
+      redirect_to posts_path, notice: "投稿を編集しました"
     else
       render 'edit'
     end
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to posts_path, notice:"削除しました！"
+    redirect_to posts_path, notice:"投稿を削除しました"
   end
 
   private
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
   def ensure_correct_user
     @post = Post.find_by(id:params[:id])
     if @post.user_id != current_user.id
-      flash[:notice] = "権限がありません！"
+      flash[:notice] = "アクセス権限がありません"
       redirect_to posts_path
     end
   end
