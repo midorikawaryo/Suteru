@@ -1,4 +1,5 @@
 # README
+![suteru](https://user-images.githubusercontent.com/40833408/51782908-eea11300-2173-11e9-8486-9aa5fcb3c546.png)
 
 # Suteru(ステール)
 ![2019-01-22 8 35 56](https://user-images.githubusercontent.com/40833408/51503858-dd2cd380-1e20-11e9-9387-aac964fcb6de.png)
