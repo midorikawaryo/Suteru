@@ -19,7 +19,7 @@ class User < ApplicationRecord
     user = User.find_by(email: auth.info.email)
   
     unless user
-      user = User.new(email: auth.info.email,
+      user = User.find_by(email: auth.info.email,
                       provider: auth.provider,
                       uid:      auth.uid,
                       name: auth.info.name,
@@ -35,7 +35,7 @@ class User < ApplicationRecord
     user = User.find_by(provider: auth.provider, uid: auth.uid)
 
     unless user
-      user = User.new(provider: auth.provider,
+      user = User.find_by(provider: auth.provider,
                       uid:      auth.uid,
                       email:    "#{auth.uid}-#{auth.provider}@example.com",
                       name: auth.info.name,
@@ -51,7 +51,7 @@ class User < ApplicationRecord
     user = User.find_by(provider: auth.provider, uid: auth.uid)
 
     unless user
-      user = User.new(provider: auth.provider,
+      user = User.find_by(provider: auth.provider,
                       uid:      auth.uid,
                       email:    "#{auth.uid}-#{auth.provider}@example.com",
                       name: auth.info.name,
