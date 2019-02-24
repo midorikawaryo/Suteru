@@ -3,8 +3,10 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :destroy, :show]
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
+  PER = 8
+
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @posts = Post.all.order(created_at: :desc).page(params[:page]).per(PER)
   end
 
   def new
