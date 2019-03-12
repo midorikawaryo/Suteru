@@ -37,10 +37,14 @@
 ## カタログ設計、テーブル設計、画面遷移図、画面ワイヤーフレーム
 https://docs.google.com/spreadsheets/d/1jgjGMQn-nhN1vjxvak9M6_ynAoxUN7j3A_reob-hnOs/edit?usp=sharing
 
-## 使用予定Gem
+## 使用Gem
 * carrierwave
 * mini_magick
 * devise
 * omniauth
+* omniauth-google-oauth2
 * omniauth-twitter
-* simple_calendar
+* omniauth-facebook
+* social-share-button
+* fog-aws
+* kaminari
